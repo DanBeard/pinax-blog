@@ -71,7 +71,7 @@ class Post(models.Model):
 
     title = models.CharField(_("Title"), max_length=90)
     slug = models.SlugField(_("Slug"), unique=settings.PINAX_BLOG_SLUG_UNIQUE)
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="posts", verbose_name=_("Author"))
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="blog_posts", verbose_name=_("Author"))
 
     markup = models.CharField(_("Markup"), max_length=25, choices=settings.PINAX_BLOG_MARKUP_CHOICES)
 
